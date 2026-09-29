@@ -183,6 +183,19 @@ async function loadEager(doc) {
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
  */
+
+function decorateSectionStyles() {
+  document.querySelectorAll('.hero-container').forEach((section) => {
+    const bg = section.dataset.backgroundImage;
+
+    if (bg) {
+      section.style.backgroundImage = `url(${bg})`;
+      section.style.backgroundSize = 'cover';
+      section.style.backgroundPosition = 'center';
+    }
+  });
+}
+
 async function loadLazy(doc) {
   loadHeader(doc.querySelector('body > header'));
 
@@ -218,15 +231,3 @@ async function loadPage() {
 }
 
 loadPage();
-
-function decorateSectionStyles() {
-document.querySelectorAll('.hero-container').forEach((section) => {
-const bg = section.dataset.backgroundImage;
- 
-if (bg) {
-section.style.backgroundImage = `url(${bg})`;
-section.style.backgroundSize = 'cover';
-section.style.backgroundPosition = 'center';
-}
-});
-}
