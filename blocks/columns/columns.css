@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity */
+
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -23,11 +25,132 @@
   .columns > div {
     align-items: center;
     flex-direction: unset;
-    gap: 24px;
   }
 
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+.deloitte-links {
+background: #000;
+color: #fff;
+padding: 60px 0 30px;
+}
+
+.deloitte-links .default-content-wrapper,
+.deloitte-links .columns-wrapper {
+max-width: 1420px;
+margin: 0 auto;
+padding: 0 80px;
+}
+
+.deloitte-links > .default-content-wrapper h3 {
+color: #fff;
+font-size: 3.5rem;
+font-weight: 300 !important;
+line-height: 1.1;
+margin: 0 0 48px;
+}
+
+.deloitte-links .columns > div {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 0.8fr;
+  align-items: start;
+}
+
+.deloitte-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.deloitte-links li {
+  margin: 0;
+}
+
+.deloitte-links .columns > div > div:first-child h3 {
+font-size: 1.15rem;
+font-weight: 300;
+line-height: 1.4;
+margin: 0 0 22px;
+}
+
+.deloitte-links .columns > div > div:first-child h3 a {
+  color: #c8c8c8;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.deloitte-links .columns > div > div:first-child h3 a:hover {
+  color: #fff;
+}
+
+.deloitte-links .columns > div > div:not(:first-child) li {
+  margin-bottom: 16px;
+}
+
+.deloitte-links .columns > div > div:not(:first-child) a {
+  color: #c8c8c8;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.8;
+  transition: color .2s;
+}
+
+.deloitte-links .columns > div > div:not(:first-child) a:hover {
+  color: #fff;
+}
+
+.deloitte-links > .default-content-wrapper:last-child {
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+margin-top: 40px;
+}
+
+.deloitte-links > .default-content-wrapper:last-child > p:first-child {
+  color: #fff;
+  font-size: 0.9rem;
+  margin: 0 0 10px;
+}
+
+.deloitte-links > .default-content-wrapper:last-child > p:last-child {
+  display: flex;
+  gap: 5px;
+  margin: 0;
+}
+
+.deloitte-links .icon img {
+  width: 18px;
+  height: 18px;
+  opacity: .85;
+  transition: opacity .2s;
+}
+
+.deloitte-links .icon img:hover {
+  opacity: 1;
+}
+
+@media (width <= 900px) {
+  .deloitte-links .columns > div {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .deloitte-links .default-content-wrapper,
+  .deloitte-links .columns-wrapper {
+    padding: 0 24px;
+  }
+
+  .deloitte-links > .default-content-wrapper:last-child {
+    justify-content: flex-start;
+    margin-top: 40px;
+  }
+
+  .deloitte-links > .default-content-wrapper h3 {
+    font-size: 2rem;
   }
 }

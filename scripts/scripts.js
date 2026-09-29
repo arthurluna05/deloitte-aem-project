@@ -188,6 +188,7 @@ async function loadLazy(doc) {
 
   const main = doc.querySelector('main');
   await loadSections(main);
+  decorateSectionStyles();
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
@@ -217,3 +218,15 @@ async function loadPage() {
 }
 
 loadPage();
+
+function decorateSectionStyles() {
+document.querySelectorAll('.hero-container').forEach((section) => {
+const bg = section.dataset.backgroundImage;
+ 
+if (bg) {
+section.style.backgroundImage = `url(${bg})`;
+section.style.backgroundSize = 'cover';
+section.style.backgroundPosition = 'center';
+}
+});
+}
